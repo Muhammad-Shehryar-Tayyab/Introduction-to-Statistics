@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Statistics</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Smooth Scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-[#1e293b] text-white">
+
+<!-- Navbar -->
+<nav class="bg-[#273549] shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo / Title -->
+    <h1 class="text-2xl font-bold flex items-center gap-2">
+      <i class="fa-solid fa-chart-pie text-blue-400"></i>
+      Statistics Hub
+    </h1>
+
+    <!-- Desktop Links -->
+    <ul class="hidden md:flex space-x-8 text-lg">
+      <li>
+        <a href="#home" 
+           class="hover:text-blue-400 flex items-center gap-2 transform transition duration-300 hover:scale-110">
+           <i class="fa-solid fa-house"></i> Home
+        </a>
+      </li>
+      <li>
+        <a href="#formulas" 
+           class="hover:text-blue-400 flex items-center gap-2 transform transition duration-300 hover:scale-110">
+           <i class="fa-solid fa-square-root-variable"></i> Formulas
+        </a>
+      </li>
+      <li>
+        <a href="#topics" 
+           class="hover:text-blue-400 flex items-center gap-2 transform transition duration-300 hover:scale-110">
+           <i class="fa-solid fa-book-open"></i> Topics
+        </a>
+      </li>
+      <li>
+        <a href="#about" 
+           class="hover:text-blue-400 flex items-center gap-2 transform transition duration-300 hover:scale-110">
+           <i class="fa-solid fa-circle-info"></i> About
+        </a>
+      </li>
+    </ul>
+
+    <!-- Hamburger Icon (Mobile) -->
+    <button id="menu-btn" class="md:hidden text-2xl focus:outline-none transition-transform duration-300">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu with Animation -->
+  <div id="mobile-menu" 
+       class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out md:hidden bg-[#1e293b] px-6 space-y-4">
+    <a href="#home" class="block py-2 hover:text-blue-400"><i class="fa-solid fa-house mr-2"></i> Home</a>
+    <a href="#formulas" class="block py-2 hover:text-blue-400"><i class="fa-solid fa-square-root-variable mr-2"></i> Formulas</a>
+    <a href="#topics" class="block py-2 hover:text-blue-400"><i class="fa-solid fa-book-open mr-2"></i> Topics</a>
+    <a href="#about" class="block py-2 hover:text-blue-400"><i class="fa-solid fa-circle-info mr-2"></i> About</a>
+  </div>
+</nav>
+
+<!-- Home Section -->
+<section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#1e293b] to-[#273549] text-center">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-4xl md:text-6xl font-bold mb-6">
+      Welcome to <span class="text-blue-400">Statistics Hub</span>
+    </h2>
+    <p class="text-lg md:text-xl text-gray-300 mb-8">
+      Learn important formulas and concepts of Statistics with clear explanations and examples — all in one place.
+    </p>
+    <a href="#formulas" 
+       class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-lg transform transition duration-300 hover:scale-110 inline-block">
+       <i class="fa-solid fa-arrow-down mr-2"></i> Explore Formulas
+    </a>
+  </div>
+</section>
+
+<!-- MathJax Script -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- Formulas Section -->
+<section id="formulas" class="py-20 bg-[#273549] text-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">
+      <i class="fa-solid fa-square-root-variable text-blue-400 mr-2"></i>
+      Important Statistics Formulas
+    </h2>
+
+    <!-- Grid of Formula Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Mean -->
+      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Mean</h3>
+        <p><b>Ungrouped:</b> $$ \bar{X} = \frac{\Sigma X}{n} $$</p>
+        <p><b>Grouped:</b> $$ \bar{X} = \frac{\Sigma fX}{\Sigma f} $$</p>
+      </div>
+
+      <!-- Median -->
+      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Median</h3>
+        <p><b>Ungrouped:</b> Middle value</p>
+        <p><b>Grouped:</b> 
+          $$ Me = L + \frac{\tfrac{n}{2} - C_f}{f_m} \times h $$
+        </p>
+      </div>
+
+      <!-- Mode -->
+      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Mode</h3>
+        <p><b>Ungrouped:</b> Most repeated value</p>
+        <p><b>Grouped:</b> 
+          $$ Mo = L + \frac{(f_1 - f_0)}{(2f_1 - f_0 - f_2)} \times h $$
+        </p>
+      </div>
+
+      <!-- Harmonic Mean -->
+      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Harmonic Mean</h3>
+        <p><b>Ungrouped:</b> $$ HM = \frac{n}{\Sigma \frac{1}{x}} $$</p>
+        <p><b>Grouped:</b> $$ HM = \frac{\Sigma f}{\Sigma \frac{f}{x}} $$</p>
+      </div>
+
+      <!-- Geometric Mean -->
+      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Geometric Mean</h3>
+        <p><b>Ungrouped:</b> 
+          $$ GM = (X_1 \cdot X_2 \cdot ... \cdot X_n)^{\tfrac{1}{n}} $$
+        </p>
+        <p><b>Grouped:</b> 
+          $$ GM = antilog \left(\frac{\Sigma f \cdot \log x}{\Sigma f}\right) $$
+        </p>
+      </div>
+
+      <!-- Moments -->
+      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Moments</h3>
+        <p>About mean: $$ \mu_r = \frac{\Sigma (X - \bar{X})^r}{n} $$</p>
+        <p>About arbitrary origin: $$ m_r' = \frac{\Sigma (X - A)^r}{n} $$</p>
+      </div>
+
+      <!-- Dispersion -->
+      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Dispersion</h3>
+        <p><b>Range:</b>  R = X<sub>o</sub> - X<sub>m</sub> </p>
+        <p><b>Ungrouped Variance:</b> 
+          $$ Variance = \frac{\Sigma X^2}{n} - \left(\frac{\Sigma X}{n}\right)^2 $$
+        </p>
+        <p><b>Ungrouped S.D.:</b> 
+          $$ S.D. = \sqrt{\frac{\Sigma X^2}{n} - \left(\frac{\Sigma X}{n}\right)^2} $$
+        </p>
+        <p><b>Grouped Variance:</b> 
+          $$ Variance = \frac{\Sigma fX^2}{\Sigma f} - \left(\frac{\Sigma fX}{\Sigma f}\right)^2 $$
+        </p>
+        <p><b>Grouped S.D.:</b> 
+          $$ S.D. = \sqrt{\frac{\Sigma fX^2}{\Sigma f} - \left(\frac{\Sigma fX}{\Sigma f}\right)^2} $$
+        </p>
+        <p><b>Coefficient of Variation:</b> 
+          $$ C.V. = \frac{S.D.}{\bar{X}} \times 100 $$
+        </p>
+      </div>
+
+      <!-- Skewness -->
+      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Skewness</h3>
+        <p>Pearson: $$ Sk = \frac{\bar{X} - Mo}{\sigma} $$</p>
+        <p>Bowley: $$ Sk = \frac{Q_3 + Q_1 - 2Q_2}{Q_3 - Q_1} $$</p>
+      </div>
+
+      <!-- Kurtosis -->
+      <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition transform duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Kurtosis</h3>
+        <p>Coefficient: $$ \beta_2 = \frac{\mu_4}{\mu_2^2} $$</p>
+        <p>Excess: $$ \gamma_2 = \beta_2 - 3 $$</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Topics Section -->
+<section id="topics" class="py-20 bg-[#1e293b] text-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">
+      <i class="fa-solid fa-book-open text-blue-400 mr-2"></i>
+      Easy Topics Explained
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- What is Statistics -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">📊 What is Statistics?</h3>
+        <p>Statistics means <b>collecting</b> numbers, <b>arranging</b> them, and <b>understanding</b> what they tell us.<br>
+        👉 Example: If we count how many boys and girls are in a class, we are doing statistics.<br>
+        👉 It helps us make decisions using data instead of guessing.</p>
+      </div>
+
+      <!-- Types of Data -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">📂 Types of Data</h3>
+        <p><b>Primary Data:</b> Information you collect yourself (asking friends’ ages).<br>
+           <b>Secondary Data:</b> Information already collected by someone else (like books, research, internet).<br>
+           👉 Example: If you survey your class = primary. If you read in a newspaper = secondary.</p>
+      </div>
+
+      <!-- Population & Sample -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">👥 Population & Sample</h3>
+        <p><b>Population:</b> The full group you want to study (all students in Pakistan).<br>
+           <b>Sample:</b> A small part of that group (like only 100 students).<br>
+           👉 We study the sample because it saves <b>time</b> and <b>effort</b>, then we apply results to the whole population.</p>
+      </div>
+
+      <!-- Parameter vs Statistic -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">📐 Parameter vs Statistic</h3>
+        <p><b>Parameter:</b> A fact about the whole population (like average marks of ALL schools).<br>
+           <b>Statistic:</b> A fact about a sample only (like average marks of 1 school).<br>
+           👉 Statistic is used to <b>estimate</b> the parameter.</p>
+      </div>
+
+      <!-- Variables -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">🔢 Variables</h3>
+        <p><b>Qualitative:</b> Qualities or names (eye color, blood group).<br>
+           <b>Quantitative:</b> Numbers (marks, weight, height).<br>
+           👉 Quantitative is further divided into:
+           - Discrete: Whole numbers (number of books).<br>
+           - Continuous: Can take decimals (weight = 55.6 kg).</p>
+      </div>
+
+      <!-- Scales of Measurement -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">📏 Scales of Measurement</h3>
+        <p><b>Nominal:</b> Just names/categories (blood group A, B, O).<br>
+           <b>Ordinal:</b> Order matters (1st, 2nd, 3rd rank).<br>
+           <b>Interval:</b> Numbers, no real zero (temperature: 0°C ≠ no heat).<br>
+           <b>Ratio:</b> Numbers with real zero (age 0 = no age, weight 0 = no weight).</p>
+      </div>
+
+      <!-- Mean -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">➕ Mean (Average)</h3>
+        <p><b>Definition:</b> The sum of values ÷ number of values.<br>
+        👉 Example: Marks = 2, 4, 6 → (2+4+6)/3 = 4.<br>
+        👉 It gives the "central" value but is affected by very high or low numbers.</p>
+      </div>
+
+      <!-- Median -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">📍 Median</h3>
+        <p><b>Definition:</b> The middle value when data is in order.<br>
+        👉 Example: 3, 5, 7 → Median = 5.<br>
+        👉 If even numbers: average of two middle values.<br>
+        👉 Useful when data has extreme values (like income).</p>
+      </div>
+
+      <!-- Mode -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">🔁 Mode</h3>
+        <p><b>Definition:</b> The value that appears most often.<br>
+        👉 Example: 2, 3, 3, 4, 5 → Mode = 3.<br>
+        👉 A dataset can have no mode, one mode, or many modes.</p>
+      </div>
+
+      <!-- Harmonic Mean -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">⚖️ Harmonic Mean</h3>
+        <p><b>Definition:</b> Used when data is in rates (speed, time).<br>
+        👉 Example: A car covers half distance at 60 km/h and half at 40 km/h → HM = 48 km/h.<br>
+        👉 It gives a better average for speed and ratios than normal mean.</p>
+      </div>
+
+      <!-- Geometric Mean -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">✖️ Geometric Mean</h3>
+        <p><b>Definition:</b> Multiply all numbers and take the root according to count.<br>
+        👉 Example: GM of 2 and 8 = √(16) = 4.<br>
+        👉 Used for population growth, money interest, biology.</p>
+      </div>
+
+      <!-- Moments -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">📊 Moments</h3>
+        <p><b>Definition:</b> Numbers that explain the shape of data.<br>
+        - 1st Moment → Mean (center)<br>
+        - 2nd Moment → Variance (spread)<br>
+        - 3rd Moment → Skewness (lean left/right)<br>
+        - 4th Moment → Kurtosis (flat or peaked)</p>
+      </div>
+
+      <!-- Dispersion -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">📏 Dispersion</h3>
+        <p><b>Definition:</b> Tells how spread out data is.<br>
+        - Range = Largest – Smallest<br>
+        - Variance = Average of squared distances<br>
+        - S.D. = Square root of variance<br>
+        👉 Example: Data = 2, 4, 6 → Range = 6–2 = 4.</p>
+      </div>
+
+      <!-- Skewness -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">↔️ Skewness</h3>
+        <p><b>Definition:</b> Shows if data is leaning left or right.<br>
+        👉 Positive Skew = Long tail to right (like salaries).<br>
+        👉 Negative Skew = Long tail to left (like exam marks with many failures).</p>
+      </div>
+
+      <!-- Kurtosis -->
+      <div class="bg-[#273549] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">📈 Kurtosis</h3>
+        <p><b>Definition:</b> Shows how peaked or flat the data curve is.<br>
+        👉 High Kurtosis = Tall sharp peak (data is concentrated).<br>
+        👉 Low Kurtosis = Flat curve (data is spread out).</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-[#273549] text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center">
+      <i class="fa-solid fa-user-graduate text-blue-400 mr-2"></i>
+      About Me & This Website
+    </h2>
+
+    <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
+      
+      <!-- Left Side: Image + Name -->
+      <div class="flex flex-col items-center md:items-start text-center md:text-left md:w-1/3">
+        <div class="relative">
+          <img src="shehryar.png" alt="Shehryar Tayyab" 
+               class="w-56 h-56 rounded-full border-4 border-blue-400 shadow-lg relative z-10">
+          <!-- Animated Glow -->
+          <span class="absolute inset-0 rounded-full border-4 border-blue-400 animate-ping opacity-30"></span>
+        </div>
+        <h3 class="text-2xl font-bold text-blue-400 mt-6">Shehryar Tayyab</h3>
+        <p class="text-gray-300 mt-2">Student of Computer Science</p>
+      </div>
+
+
+
+      <!-- Right Side: Information -->
+      <div class="md:w-2/3">
+        <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-8">
+          I am a passionate <b>student of Computer Science</b> who loves to 
+          <b>make learning easy for others</b>.  
+          I created this website to help students of Statistics 
+          understand tough topics in <b>very simple words</b>.  
+          My aim is to support every learner who finds statistics confusing.
+        </p>
+
+        <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-12">
+          This website is made especially for <b>students of Statistics</b>.  
+          Here, you will find <b>easy explanations</b>, <b>simple formulas</b>, 
+          and <b>clear examples</b> so you can learn step by step without stress.  
+        </p>
+
+        <!-- Mission / Vision / Promise -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+            <h3 class="text-xl font-semibold text-blue-400 mb-3">🎯 Our Mission</h3>
+            <p class="text-gray-300">
+              To make statistics <b>easy and fun</b> by breaking down
+              tough concepts into <b>simple words and examples</b>.
+            </p>
+          </div>
+
+          <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+            <h3 class="text-xl font-semibold text-blue-400 mb-3">🌍 Our Vision</h3>
+            <p class="text-gray-300">
+              To help every student, from beginners to advanced learners,
+              <b>understand and love statistics</b> instead of fearing it.
+            </p>
+          </div>
+
+          <div class="bg-[#1e293b] p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300">
+            <h3 class="text-xl font-semibold text-blue-400 mb-3">🤝 Our Promise</h3>
+            <p class="text-gray-300">
+              We will always provide <b>clear explanations</b>, 
+              <b>step-by-step formulas</b>, and <b>real-life examples</b>
+              to make learning smooth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-[#1e293b] text-gray-300 py-8">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+      <!-- Left: Website Info -->
+      <div class="text-center md:text-left">
+        <h3 class="text-xl font-bold text-blue-400">Statistics Hub</h3>
+        <p class="text-sm">Made with ❤️ by <b>Shehryar Tayyab</b></p>
+        <p class="text-xs mt-2">© 2025 All Rights Reserved</p>
+      </div>
+
+      <!-- Center: Quick Links -->
+      <div class="flex space-x-6">
+        <a href="#home" class="hover:text-blue-400 transition">Home</a>
+        <a href="#formulas" class="hover:text-blue-400 transition">Formulas</a>
+        <a href="#topics" class="hover:text-blue-400 transition">Topics</a>
+        <a href="#about" class="hover:text-blue-400 transition">About</a>
+      </div>
+
+      <!-- Right: Social Media -->
+      <div class="flex space-x-5 text-xl">
+        <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+<!-- Toggle Script -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let isOpen = false;
+
+  menuBtn.addEventListener('click', () => {
+    isOpen = !isOpen;
+    menuBtn.classList.toggle('rotate-90'); // Hamburger rotation animation
+    if (isOpen) {
+      mobileMenu.classList.remove('max-h-0');
+      mobileMenu.classList.add('max-h-screen', 'py-4');
+    } else {
+      mobileMenu.classList.remove('max-h-screen', 'py-4');
+      mobileMenu.classList.add('max-h-0');
+    }
+  });
+</script>
+
+</body>
+</html>
